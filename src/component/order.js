@@ -15,7 +15,6 @@ const Order = () =>{
 	const totalPosts = dataOrder.length;
 	const indexOfLastPost = currentPage * postPerPage;
 	const indexOfFirstPost = indexOfLastPost - postPerPage;
-  const filterPosts = dataOrder.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
     setDataOrder(StoreList.sortByDesc());
@@ -23,8 +22,8 @@ const Order = () =>{
 
   useEffect(() => {
     PubSub.subscribe(Const.Bus.UPDATE_SEARCH, function (msg, data) {
+      setCurrentPage(1);
       setDataOrder(data);
-      setIsRefresh(!isRefresh);
     });
     return () => {
       PubSub.unsubscribe(Const.Bus.UPDATE_SEARCH);
@@ -43,7 +42,7 @@ const Order = () =>{
     <div className="content">
       <Filter />
       <Table 
-        data= {filterPosts}
+        data= {dataOrder.slice(indexOfFirstPost, indexOfLastPost)}
         setSortTime={setSortTime}
       />
       {totalPosts > postPerPage && (

@@ -7,7 +7,6 @@ import PubSub from 'pubsub-js';
 
 const Loader = () => {
   const [handState, setHandState] = useState({});
-  const bus = useRef();
   const search = (order) => {
     if(handState){
       return Object.keys(handState).every((key) => {
