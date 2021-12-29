@@ -283,6 +283,9 @@ class StoreList {
   getDataOrder(){
     return this.dataOrder;
   }
+  setDataOrder(data){
+    this.dataOrder = data;
+  }
 }
 const instance = new StoreList();
 export default instance;
