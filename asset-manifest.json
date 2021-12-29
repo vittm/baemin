@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/baemin/static/css/main.e2e8530e.chunk.css",
-    "main.js": "/baemin/static/js/main.c47b2a9e.chunk.js",
-    "main.js.map": "/baemin/static/js/main.c47b2a9e.chunk.js.map",
+    "main.js": "/baemin/static/js/main.92482e60.chunk.js",
+    "main.js.map": "/baemin/static/js/main.92482e60.chunk.js.map",
     "runtime-main.js": "/baemin/static/js/runtime-main.5f8bb778.js",
     "runtime-main.js.map": "/baemin/static/js/runtime-main.5f8bb778.js.map",
     "static/js/2.ff3fb58f.chunk.js": "/baemin/static/js/2.ff3fb58f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5f8bb778.js",
     "static/js/2.ff3fb58f.chunk.js",
     "static/css/main.e2e8530e.chunk.css",
-    "static/js/main.c47b2a9e.chunk.js"
+    "static/js/main.92482e60.chunk.js"
   ]
 }
