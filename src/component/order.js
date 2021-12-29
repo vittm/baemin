@@ -24,7 +24,6 @@ const Order = () =>{
     PubSub.subscribe(Const.Bus.UPDATE_SEARCH, function (msg, data) {
       setCurrentPage(1);
       setDataOrder(data);
-      setIsRefresh(!isRefresh);
     });
     return () => {
       PubSub.unsubscribe(Const.Bus.UPDATE_SEARCH);
