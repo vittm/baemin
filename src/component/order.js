@@ -24,9 +24,13 @@ const Order = () =>{
   useEffect(() => {
     PubSub.subscribe(Const.Bus.UPDATE_SEARCH, function (msg, data) {
       setDataOrder(data);
+      setIsRefresh(!isRefresh);
     });
+    return () => {
+      PubSub.unsubscribe(Const.Bus.UPDATE_SEARCH);
+    };
   });
-  
+
   const setSortTime = (sort) => {
     if(sort){
       setDataOrder(StoreList.sortByAsc(dataOrder));

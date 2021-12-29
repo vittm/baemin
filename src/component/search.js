@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Input from './../widget/input';
 import Util from './../util/context';
 import * as Const from './../util/const';
@@ -7,6 +7,7 @@ import PubSub from 'pubsub-js';
 
 const Loader = () => {
   const [handState, setHandState] = useState({});
+  const bus = useRef();
   const search = (order) => {
     if(handState){
       return Object.keys(handState).every((key) => {
@@ -23,7 +24,7 @@ const Loader = () => {
     var result = Store.getDataOrder().filter(search,handState);
     PubSub.publish(Const.Bus.UPDATE_SEARCH, result);
   },[handState]);
-  
+
   const _handleInputChange = (event) => {
     const target = event.target;
     let value = target.value;

@@ -19,7 +19,7 @@ const Filter = () => {
       PubSub.publish(Const.Bus.UPDATE_SEARCH, Store.getDataOrder());
     }
   }
-  
+
   const Main = () => {
     return(
       <div className='filter'>

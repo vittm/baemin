@@ -8,6 +8,6 @@
 ### Features
   - Sort Time Column by asc and desc
   - Filter : id, status, cusomter name, rider name, merchent name, update time.
-  - Operators can cancel order by assigning themselves to certain order
+  - Operators can cancel order by assigning themselves to certain order => click status and change
   - List orders with paginations.
   - Filter status

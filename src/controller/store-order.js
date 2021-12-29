@@ -304,6 +304,20 @@ class StoreList {
     }
     return result;
   }
+  changeOrder(name,id){
+    let data = this.dataOrder;
+
+    if(data && data.length > 0){
+      for (let i = 0; i < data.length; i++) {
+        const res = data[i];
+        if(res.id === id){
+          data[i].status = name;
+          break;
+        }
+      }
+    }
+    this.dataOrder = data;
+  }
 }
 const instance = new StoreList();
 export default instance;

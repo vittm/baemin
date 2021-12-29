@@ -1,21 +1,66 @@
 import React,{ useState, useRef, useEffect} from 'react';
 import ConverText from './../util/context';
 import Status from './../widget/status';
+import PubSub from 'pubsub-js';
+import * as Const from './../util/const';
+import Store from './../controller/store-order';
 
 const Table = ({ data, setSortTime}) =>{
   const [arrow, setArrow] = useState(false);
-
+  const statusRef = useRef();
   const setSort = () => {
     setSortTime(!arrow);
     setArrow(!arrow);
   };
+  const changeStatus = (name,id) => {
+    Store.changeOrder(name,id);
+    PubSub.publish(Const.Bus.UPDATE_SEARCH, Store.getDataOrder());
+    PubSub.publish(Const.Bus.DROPDOWN, {ref: null, children: null})
+  }
+
+  const onClick = (e,id) => {
+    let n = [];
+    n.push(
+      <div className='dropdown-status'>
+        <div className='filter__report filter__report--margin' 
+            onClick={() => changeStatus(Const.status.DONE,id)}>
+            <span className='status--done'>
+              Done
+            </span>
+          </div>
+          <div className='filter__report filter__report--margin'
+            onClick={() => changeStatus(Const.status.ACCEPTED,id)}>
+            <span className='status--accepted'> Accepted</span>
+          </div>
+          <div className='filter__report filter__report--margin'
+            onClick={() => changeStatus(Const.status.DELIVERING,id)}>
+            <span className='status--delivering'> Delivering</span>
+          </div>
+          <div className='filter__report filter__report--margin'
+            onClick={() => changeStatus(Const.status.DRIVERASSIGNED,id)}>
+            <span className='status--driver-assigned'> Driver Assigned</span>
+          </div>
+          <div className='filter__report filter__report--margin'
+            onClick={() => changeStatus(Const.status.CANCELED, id)}>
+            <span className='status--cancel'> Canceled</span>
+          </div>
+          <div className='filter__report filter__report--margin'
+            onClick={() => changeStatus(Const.status.CREATED, id)}>
+            <span className='status--created'> Created</span>
+          </div>
+      </div>
+    )
+    PubSub.publish(Const.Bus.DROPDOWN, {ref: e, children: n});
+  };
   const ListOrder = () => {
-    if(!data || data.length === 0) return null;
+    if(!data || data.length === 0) return <div className='null flx middle-xs'><img alt="hi" className='null__avatar' src="https://cdn-icons-png.flaticon.com/512/960/960616.png"/> <span>No data</span></div>
     return data.map((res,index) => {
       return (
         <div key={'order-item'+index} className='table__body row middle-xs'>
           <div className='table__body__item table__thead__item--id'>{res.id}</div>
-          <div className='table__body__item table__thead__item--status'>{<Status status={res.status} />}</div>
+          <div className='table__body__item table__thead__item--status'>
+            {<Status status={res.status} onClick={(e) => onClick(e, res.id)} />}
+          </div>
           <div className='table__body__item table__thead__item--customer'>{res.customer}</div>
           <div className='table__body__item table__thead__item--rider flx middle-xs'>
               <img className='table__body__avatar' src={res.rider.avatar} alt={"avatar"+ res.rider.name}/>

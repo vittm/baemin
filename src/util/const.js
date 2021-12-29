@@ -7,5 +7,6 @@ export const status = {
   CANCELED: 'canceled'
 }
 export const Bus = {
-  UPDATE_SEARCH: 'update_search'
+  UPDATE_SEARCH: 'update_search',
+  DROPDOWN: ''
 }
