@@ -6,3 +6,6 @@ export const status = {
   DONE: 'done',
   CANCELED: 'canceled'
 }
+export const Bus = {
+  UPDATE_SEARCH: 'update_search'
+}

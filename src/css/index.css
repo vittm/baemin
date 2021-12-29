@@ -897,6 +897,31 @@ code {
   cursor: no-drop;
   pointer-events: none;
 }
+.input {
+	box-sizing: border-box;
+  margin: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  padding: 4px 12px;
+  color: #050a19;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #FFFFFF;
+  background-image: none;
+  border: 1px solid #e1e4ea;
+  border-radius: 4px;
+  transition: all .3s;
+}
+
+
+
 /* Dashboard */
 .dashboard{
 }
@@ -1031,6 +1056,9 @@ code {
 	align-items: center;
 	margin-right: 10px;
 }
+.filter__button{
+	cursor: pointer;
+}
 .filter__repport__icon{
 	fill: rgb(194 199 199 / 97%);
 	font-size: 22px;
@@ -1101,4 +1129,8 @@ code {
 }
 .status--size{
 	font-size: 30px;
+}
+.search__title{
+	font-size: 0.8rem;
+	margin-bottom: 5px;
 }

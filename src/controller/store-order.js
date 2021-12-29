@@ -286,6 +286,24 @@ class StoreList {
   setDataOrder(data){
     this.dataOrder = data;
   }
+  sortByPriceAsc(data){
+    let result;
+    if(data){
+      result = data.sort((a, b) => (a.update_time - b.update_time));
+    }else{
+      result = this.dataOrder.sort((a, b) => (a.update_time - b.update_time));
+    }
+    return result;
+  }
+  sortByPriceDesc(data) {
+    let result;
+    if(data){
+      result = data.sort((a, b) => (b.update_time - a.update_time));
+    }else{
+      result = this.dataOrder.sort((a, b) => (b.update_time - a.update_time));
+    }
+    return result;
+  }
 }
 const instance = new StoreList();
 export default instance;
