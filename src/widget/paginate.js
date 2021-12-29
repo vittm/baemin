@@ -13,7 +13,7 @@ const Paginate = ({ currentPage, setCurrentPage, totalPosts, postPerPage }) => {
 		<ul className="pagination">
 			<li className={`page-item ${currentPage === 1 && `disabled`}`}>
 				<button className="page-link" onClick={() => setCurrentPage(currentPage - 1)}>
-					&laquo;
+				←
 				</button>
 			</li>
 			{pages.map((page) => (
@@ -27,7 +27,7 @@ const Paginate = ({ currentPage, setCurrentPage, totalPosts, postPerPage }) => {
 			))}
 			<li className={`page-item ${currentPage === totalPages && `disabled`}`}>
 				<button className="page-link" onClick={() => setCurrentPage(currentPage + 1)}>
-					&raquo;
+				→
 				</button>
 			</li>
 		</ul>

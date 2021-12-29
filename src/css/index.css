@@ -934,7 +934,7 @@ code {
 	padding: 20px;
 }
 .brand__logo{
-  width: 80px;
+  width: 70px;
   margin: auto;
 }
 .table__header .card-icon{
@@ -1015,6 +1015,33 @@ code {
   font-weight: 500;
   font-size: 0.9rem;
 }
+.table__thead__item--id{
+	width: 3%;
+}
+.table__thead__item--customer{
+	width: 13%;
+}
+.table__thead__item--order{
+	width: 16%;
+}
+.table__thead__item--rider{
+	width: 15%;
+}
+.table__thead__item--merchant{
+	width: 13%;
+}
+.table__thead__item--m-address{
+	width: 18%;
+}
+.table__thead__item--total{
+	width: 10%;
+}
+.table__thead__item--time{
+	width: 5%;
+}
+.table__thead__item--status{
+	width: 6%;
+}
 .table__thead__item.click{
 	cursor: pointer;
 }
@@ -1055,8 +1082,6 @@ code {
 	display: flex;
 	align-items: center;
 	margin-right: 10px;
-}
-.filter__button{
 	cursor: pointer;
 }
 .filter__repport__icon{
@@ -1133,4 +1158,15 @@ code {
 .search__title{
 	font-size: 0.8rem;
 	margin-bottom: 5px;
+}
+.filter__search{
+	flex: none;
+	display: block;
+}
+.search__reset{
+	margin-top: 20px;
+}
+.search__reset .status--cancel{
+	padding: 6px 12px;
+	font-size: 1rem;
 }

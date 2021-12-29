@@ -14,18 +14,18 @@ const Table = ({ data, setSortTime}) =>{
     return data.map((res,index) => {
       return (
         <div key={'order-item'+index} className='table__body row middle-xs'>
-          <div className='table__body__item col-xs-1'>{res.id}</div>
-          <div className='table__body__item col-xs-1'>{<Status status={res.status} />}</div>
-          <div className='table__body__item col-xs-1'>{res.customer}</div>
-          <div className='table__body__item col-xs-2 flx middle-xs'>
+          <div className='table__body__item table__thead__item--id'>{res.id}</div>
+          <div className='table__body__item table__thead__item--status'>{<Status status={res.status} />}</div>
+          <div className='table__body__item table__thead__item--customer'>{res.customer}</div>
+          <div className='table__body__item table__thead__item--rider flx middle-xs'>
               <img className='table__body__avatar' src={res.rider.avatar} alt={"avatar"+ res.rider.name}/>
               <div className='table__body__drive-name'>{res.rider.name}</div>
           </div>
-          <div className='table__body__item col-xs-2'>{res.order_address}</div>
-          <div className='table__body__item col-xs-1'>{res.merchant_name}</div>
-          <div className='table__body__item col-xs-2'>{res.merchant_address}</div>
-          <div className='table__body__item col-xs-1'>{ConverText.addCommas(res.total_price)}</div>
-          <div className='table__body__item col-xs-1'>{res.update_time}</div>
+          <div className='table__body__item table__thead__item--order'>{res.order_address}</div>
+          <div className='table__body__item table__thead__item--merchant'>{res.merchant_name}</div>
+          <div className='table__body__item table__thead__item--m-address'>{res.merchant_address}</div>
+          <div className='table__body__item table__thead__item--total'>{ConverText.addCommas(res.total_price)}</div>
+          <div className='table__body__item table__thead__item--time'>{res.update_time}</div>
       </div>
       )
     });
@@ -40,15 +40,15 @@ const Table = ({ data, setSortTime}) =>{
       </div>
       <div className='table__container'>
         <div className='table__thead row'>
-            <div className='table__thead__item col-xs-1'>Id</div>
-            <div className='table__thead__item col-xs-1'>Status</div>
-            <div className='table__thead__item col-xs-1'>Customer</div>
-            <div className='table__thead__item col-xs-2'>Rider Name</div>
-            <div className='table__thead__item col-xs-2'>Order Address</div>
-            <div className='table__thead__item col-xs-1'>Merchant Name</div>
-            <div className='table__thead__item col-xs-2'>Merchant Address</div>
-            <div className='table__thead__item col-xs-1'>Total Price</div>
-            <div className='table__thead__item click col-xs-1' 
+            <div className='table__thead__item table__thead__item--id'>Id</div>
+            <div className='table__thead__item table__thead__item--status'>Status</div>
+            <div className='table__thead__item table__thead__item--customer'>Customer</div>
+            <div className='table__thead__item table__thead__item--rider'>Rider Name</div>
+            <div className='table__thead__item table__thead__item--order'>Order Address</div>
+            <div className='table__thead__item table__thead__item--merchant'>Merchant Name</div>
+            <div className='table__thead__item table__thead__item--m-address'>Merchant Address</div>
+            <div className='table__thead__item table__thead__item--total'>Total Price</div>
+            <div className='table__thead__item table__thead__item--time click ' 
               onClick={() => setSort()}>
                 Time 
                 <span className='table__thead__symbol'>{arrow ? '↑' : '↓' }</span>

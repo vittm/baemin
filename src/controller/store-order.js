@@ -286,7 +286,7 @@ class StoreList {
   setDataOrder(data){
     this.dataOrder = data;
   }
-  sortByPriceAsc(data){
+  sortByAsc(data){
     let result;
     if(data){
       result = data.sort((a, b) => (a.update_time - b.update_time));
@@ -295,7 +295,7 @@ class StoreList {
     }
     return result;
   }
-  sortByPriceDesc(data) {
+  sortByDesc(data) {
     let result;
     if(data){
       result = data.sort((a, b) => (b.update_time - a.update_time));

@@ -13,15 +13,13 @@ const Order = () =>{
 
   const postPerPage = 5;
 	const totalPosts = dataOrder.length;
-
 	const indexOfLastPost = currentPage * postPerPage;
 	const indexOfFirstPost = indexOfLastPost - postPerPage;
   const filterPosts = dataOrder.slice(indexOfFirstPost, indexOfLastPost);
 
   useEffect(() => {
-    setDataOrder(StoreList.sortByPriceDesc());
+    setDataOrder(StoreList.sortByDesc());
   },[]);
-
 
   useEffect(() => {
     PubSub.subscribe(Const.Bus.UPDATE_SEARCH, function (msg, data) {
@@ -30,9 +28,9 @@ const Order = () =>{
   });
   const setSortTime = (sort) => {
     if(sort){
-      setDataOrder(StoreList.sortByPriceAsc(dataOrder));
+      setDataOrder(StoreList.sortByAsc(dataOrder));
     }else{
-      setDataOrder(StoreList.sortByPriceDesc(dataOrder));
+      setDataOrder(StoreList.sortByDesc(dataOrder));
     }
     setIsRefresh(!isRefresh);
   };
