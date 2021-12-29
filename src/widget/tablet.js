@@ -1,4 +1,4 @@
-import React,{ useState, useRef, useEffect} from 'react';
+import React,{ useState} from 'react';
 import ConverText from './../util/context';
 import Status from './../widget/status';
 import PubSub from 'pubsub-js';
@@ -7,7 +7,6 @@ import Store from './../controller/store-order';
 
 const Table = ({ data, setSortTime}) =>{
   const [arrow, setArrow] = useState(false);
-  const statusRef = useRef();
   const setSort = () => {
     setSortTime(!arrow);
     setArrow(!arrow);

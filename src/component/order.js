@@ -24,6 +24,7 @@ const Order = () =>{
     PubSub.subscribe(Const.Bus.UPDATE_SEARCH, function (msg, data) {
       setCurrentPage(1);
       setDataOrder(data);
+      setIsRefresh(!isRefresh);
     });
     return () => {
       PubSub.unsubscribe(Const.Bus.UPDATE_SEARCH);
@@ -46,13 +47,13 @@ const Order = () =>{
         setSortTime={setSortTime}
       />
       {totalPosts > postPerPage && (
-						<Paginate
-							currentPage={currentPage}
-							setCurrentPage={setCurrentPage}
-							totalPosts={totalPosts}
-							postPerPage={postPerPage}
-						/>
-					)}
+        <Paginate
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalPosts={totalPosts}
+          postPerPage={postPerPage}
+        />
+      )}
     </div>
   )
 }

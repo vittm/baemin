@@ -2,7 +2,6 @@ import React,{ useState, useRef,  useEffect} from 'react';
 import { useDetectOutsideClick } from "./../util/useDetectOutsideClick";
 import PubSub from 'pubsub-js';
 import * as Const from './../util/const';
-import Store from './../controller/store-order';
 
 const Loader = ({mainRef}) => {
   
