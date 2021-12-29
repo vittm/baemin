@@ -6,17 +6,28 @@ import Store from './../controller/store-order';
 
 const Filter = () => {
   const [showSearch, setShowSearch] = useState(false);
+
   const toggleSearch = () => {
     setShowSearch(!showSearch);
   }
+
   const filter = (name) => {
-    const result = Store.getDataOrder().filter(word => word.status == name);
-    PubSub.publish(Const.Bus.UPDATE_SEARCH, result);
+    if(name){
+      const result = Store.getDataOrder().filter(word => word.status == name);
+      PubSub.publish(Const.Bus.UPDATE_SEARCH, result);
+    }else{
+      PubSub.publish(Const.Bus.UPDATE_SEARCH, Store.getDataOrder());
+    }
   }
+  
   const Main = () => {
     return(
       <div className='filter'>
         <div className="flx">
+          <div className='filter__report filter__report--margin'
+            onClick={() => filter()}>
+            <span className='status--created'> All</span>
+          </div>
           <div className='filter__report filter__report--margin' 
             onClick={() => filter(Const.status.DONE)}>
             <span className='status--done'>

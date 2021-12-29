@@ -26,6 +26,7 @@ const Order = () =>{
       setDataOrder(data);
     });
   });
+  
   const setSortTime = (sort) => {
     if(sort){
       setDataOrder(StoreList.sortByAsc(dataOrder));
