@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/baemin/static/css/main.fbd1e88a.chunk.css",
-    "main.js": "/baemin/static/js/main.ae655635.chunk.js",
-    "main.js.map": "/baemin/static/js/main.ae655635.chunk.js.map",
+    "main.css": "/baemin/static/css/main.87d3c9e5.chunk.css",
+    "main.js": "/baemin/static/js/main.dc0ab625.chunk.js",
+    "main.js.map": "/baemin/static/js/main.dc0ab625.chunk.js.map",
     "runtime-main.js": "/baemin/static/js/runtime-main.0e738c7f.js",
     "runtime-main.js.map": "/baemin/static/js/runtime-main.0e738c7f.js.map",
     "static/js/2.5250bd11.chunk.js": "/baemin/static/js/2.5250bd11.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.9c3aac30.chunk.js": "/baemin/static/js/3.9c3aac30.chunk.js",
     "static/js/3.9c3aac30.chunk.js.map": "/baemin/static/js/3.9c3aac30.chunk.js.map",
     "index.html": "/baemin/index.html",
-    "static/css/main.fbd1e88a.chunk.css.map": "/baemin/static/css/main.fbd1e88a.chunk.css.map",
+    "static/css/main.87d3c9e5.chunk.css.map": "/baemin/static/css/main.87d3c9e5.chunk.css.map",
     "static/js/2.5250bd11.chunk.js.LICENSE.txt": "/baemin/static/js/2.5250bd11.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0e738c7f.js",
     "static/js/2.5250bd11.chunk.js",
-    "static/css/main.fbd1e88a.chunk.css",
-    "static/js/main.ae655635.chunk.js"
+    "static/css/main.87d3c9e5.chunk.css",
+    "static/js/main.dc0ab625.chunk.js"
   ]
 }
