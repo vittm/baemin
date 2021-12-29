@@ -39,10 +39,14 @@ const Order = () =>{
     }
     setIsRefresh(!isRefresh);
   };
+  const setRefresh = () => {
+    setIsRefresh(!isRefresh);
+  }
   return(
     <div className="content">
       <Filter />
-      <Table 
+      <Table
+        setRefresh={setRefresh}
         data= {dataOrder.slice(indexOfFirstPost, indexOfLastPost)}
         setSortTime={setSortTime}
       />

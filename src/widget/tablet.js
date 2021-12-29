@@ -5,7 +5,7 @@ import PubSub from 'pubsub-js';
 import * as Const from './../util/const';
 import Store from './../controller/store-order';
 
-const Table = ({ data, setSortTime}) =>{
+const Table = ({ data, setSortTime, setRefresh}) =>{
   const [arrow, setArrow] = useState(false);
   const setSort = () => {
     setSortTime(!arrow);
@@ -13,7 +13,7 @@ const Table = ({ data, setSortTime}) =>{
   };
   const changeStatus = (name,id) => {
     Store.changeOrder(name,id);
-    PubSub.publish(Const.Bus.UPDATE_SEARCH, Store.getDataOrder());
+    setRefresh(true);
     PubSub.publish(Const.Bus.DROPDOWN, {ref: null, children: null})
   }
 
